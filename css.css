@@ -1,0 +1,427 @@
+#title {position: absolute;font-family: Arial, Helvetica, sans-serif;font-weight: 800;font-size: 30px;font-style: normal;top: 10px;}
+#select{position: absolute;top: 50px;font-family: Arial, Helvetica, sans-serif;font-weight: 400;font-size: 20px;font-style: normal;}
+#minicanva{position: absolute;top: 80px;}
+#maincanva{position: absolute;top: 190px;}
+
+#lc1alabel{position: absolute;top:810px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1blabel{position: absolute;top:650px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+
+#lc1alabeltable{position: absolute;top:360px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1atableadd1{cursor: pointer;position: absolute;top:385px;left: 255px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1atableadd2{cursor: pointer;display: none;position: absolute;top:405px;left: 255px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1atableminus2{cursor: pointer;display: none;position: absolute;top:405px;left: 273px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1atableminus3{cursor: pointer;display: none;position: absolute;top:426px;left: 258px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedAsolvent{position: absolute;top:360px;left: 120px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedAsolventinput{width: 120px;margin-right: 5px;}
+#lc1feedA1{position: absolute;top:390px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA1input{width: 90px;margin-right: 5px;}
+#lc1feedA1molarity{position: absolute;top:390px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA1molarityinput{width: 90px;margin-right: 5px;}
+#lc1feedA2{display: none; position: absolute;top:410px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA2input{width: 90px;margin-right: 5px;}
+#lc1feedA2molarity{display: none;position: absolute;top:410px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA2molarityinput{width: 90px;margin-right: 5px;}
+#lc1feedA3{display: none;position: absolute;top:430px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA3input{width: 90px;margin-right: 5px;}
+#lc1feedA3molarity{display: none;position: absolute;top:430px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedA3molarityinput{width: 90px;margin-right: 5px;}
+
+#lc1blabeltable{position: absolute;top:360px;left: 300px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1btableadd1{cursor: pointer;position: absolute;top:385px;left: 505px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1btableadd2{cursor: pointer;display: none;position: absolute;top:405px;left: 505px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1btableminus2{cursor: pointer;display: none;position: absolute;top:405px;left: 525px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1btableminus3{cursor: pointer;display: none;position: absolute;top:426px;left: 508px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedBsolvent{position: absolute;top:360px;left: 370px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedBsolventinput{width: 120px;margin-right: 5px;}
+#lc1feedB1{position: absolute;top:390px;left: 300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB1input{width: 90px;margin-right: 5px;}
+#lc1feedB1molarity{position: absolute;top:390px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB1molarityinput{width: 90px;margin-right: 5px;}
+#lc1feedB2{display: none;position: absolute;top:410px;left: 300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB2input{width: 90px;margin-right: 5px;}
+#lc1feedB2molarity{display: none;position: absolute;top:410px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB2molarityinput{width: 90px;margin-right: 5px;}
+#lc1feedB3{display: none;position: absolute;top:430px;left:300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB3input{width: 90px;margin-right: 5px;}
+#lc1feedB3molarity{display: none;position: absolute;top:430px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedB3molarityinput{width: 90px;margin-right: 5px;}
+
+#lc1clabeltable{position: absolute;top:320px;left: 550px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedCsolvent{position: absolute;top:320px;left: 620px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedCsolventinput{width: 100px;margin-right: 5px;}
+#lc1feedC1{position: absolute;top:350px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC1input{width:90px;margin-right: 5px;}
+#lc1feedC1molarity{position: absolute;top:350px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC1molarityinput{width: 70px;margin-right: 5px;}
+#lc1feedC2{position: absolute;top:370px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC2input{width: 90px;margin-right: 5px;}
+#lc1feedC2molarity{position: absolute;top:370px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC2molarityinput{width: 70px;margin-right: 5px;}
+#lc1feedC3{position: absolute;top:390px;left:550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC3input{width: 90px;margin-right: 5px;}
+#lc1feedC3molarity{position: absolute;top:390px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1feedC3molarityinput{width: 70px;margin-right: 5px;}
+
+#lc1pressure{position: absolute;top:670px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1pressureinput{width: 170px;margin-right: 5px;}
+#lc1quench{position: absolute;top:690px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1quenchinput{width: 170px;margin-right: 5px;}
+
+#lc1notes{position: absolute;top:870px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1notesinput{width: 170px;margin-right: 5px;}
+
+#lc1steadystateflag{width: 178px; height:22px; position: absolute;top:710px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1sonic{width: 178px; height:22px; position: absolute;top:650px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1collectiontime{position: absolute;top:730px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1collectiontimeinput{width: 170px;margin-right: 5px;}
+
+#lc1product{position: absolute;top:770px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1productinput{width: 170px;margin-right: 5px;}
+#lc1conversion{position: absolute;top:790px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1conversioninput{width: 170px;margin-right: 5px;}
+#lc1conversionmethod{width: 148px; height:22px; position: absolute;top:810px;left: 630px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+#lc1yield{position: absolute;top:830px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1yieldinput{width: 170px;margin-right: 5px;}
+#lc1yieldmethod{width: 148px; height:22px; position: absolute;top:850px;left: 630px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+
+
+
+
+#lc1addmixername{height: 22px;position: absolute;top:500px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1addmixernameinput{width: 150px;margin-right: 5px;}
+#lc1addmixervolume{height: 22px;position: absolute;top:500px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1addmixervolumeinput{width: 100px;margin-right: 5px;}
+#lc1addmixer{cursor: pointer;background-color: #000000;color: white;border-radius: 10px;position: absolute;top:497px;left: 660px;width: 80px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+
+
+
+
+#lc1abmixernew{height: 22px;position: absolute;top:730px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1ablinetemp{position: absolute;top:690px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1ablinetempinput{width: 50px;margin-right: 5px;}
+#lc1abbathtemp{position: absolute;top:710px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1abbathtempinput{width: 50px;margin-right: 5px;}
+
+#lc1experimental{position: absolute;top:230px;left: 50px;width: 740px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1reactorleaktest{position: absolute;top:900px;left: 240px;width: 600px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1reactorvolume{position: absolute;top:920px;left: 240px;width: 600px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1csvsave{ cursor: pointer;background-color: #000000;color: white;border-radius: 10px;position: absolute;top:950px;left: 690px;width: 100px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+
+
+#lc1aflowrate{position: absolute;top:850px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1aflowrateinput{width: 50px;margin-right: 5px;}
+#lc1bflowrate{position: absolute;top:690px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1bflowrateinput{width: 50px;margin-right: 5px;}
+#lc1cflowrate{position: absolute;top:530px;left: 50px;}
+#lc1cflowrateinput{width: 50px;margin-right: 5px;}
+#lc1abcdiameter{position: absolute;top:660px;left: 380px;}
+#lc1abcdiameterinput{width: 50px;margin-right: 5px;}
+#lc1adiameter{position: absolute;top:870px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1adiameterinput{width: 50px;margin-right: 5px;}
+#lc1bdiameter{position: absolute;top:710px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1bdiameterinput{width: 50px;margin-right: 5px;}
+#lc1cdiameter{position: absolute;top:550px;left: 50px;}
+#lc1cdiameterinput{width: 50px;margin-right: 5px;}
+#lc1abdiameter{position: absolute;top:770px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1abdiameterinput{width: 50px;margin-right: 5px;}
+#lc1abctime{position: absolute;top:680px;left: 380px;}
+#lc1abctimeinput{width: 50px;margin-right: 5px;}
+#lc1atime{position: absolute;top:890px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1atimeinput{width: 50px;margin-right: 5px;}
+#lc1btime{position: absolute;top:730px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1btimeinput{width: 50px;margin-right: 5px;}
+#lc1ctime{position: absolute;top:570px;left: 50px;}
+#lc1ctimeinput{width: 50px;margin-right: 5px;}
+#lc1abtime{position: absolute;top:790px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1abtimeinput{width: 50px;margin-right: 5px;}
+#lc1abchipadd{position: absolute;top:795px;left: 295px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1abclength{position: absolute;top:700px;left: 380px;font-weight: 900;}
+#lc1alength{position: absolute;top:910px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1blength{position: absolute;top:750px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc1clength{position: absolute;top:590px;left: 50px;font-weight: 900;}
+#lc1ablength{position: absolute;top:810px;left: 220px;font-weight: 900; font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#largecanvas1values{ display:none;}
+
+
+
+
+
+
+
+
+
+#lc2alabel{position: absolute;top:810px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2blabel{position: absolute;top:650px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2clabel{position: absolute;top:490px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+
+
+#lc2aflowrate{position: absolute;top:850px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2aflowrateinput{width: 50px;margin-right: 5px;}
+#lc2bflowrate{position: absolute;top:690px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bflowrateinput{width: 50px;margin-right: 5px;}
+#lc2cflowrate{position: absolute;top:530px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2cflowrateinput{width: 50px;margin-right: 5px;}
+#lc2abcdiameter{position: absolute;top:660px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2abcdiameterinput{width: 50px;margin-right: 5px;}
+#lc2adiameter{position: absolute;top:870px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2adiameterinput{width: 50px;margin-right: 5px;}
+#lc2bdiameter{position: absolute;top:710px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bdiameterinput{width: 50px;margin-right: 5px;}
+#lc2cdiameter{position: absolute;top:550px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2cdiameterinput{width: 50px;margin-right: 5px;}
+#lc2abdiameter{position: absolute;top:770px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2abdiameterinput{width: 50px;margin-right: 5px;}
+#lc2abctime{position: absolute;top:680px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2abctimeinput{width: 50px;margin-right: 5px;}
+#lc2atime{position: absolute;top:890px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2atimeinput{width: 50px;margin-right: 5px;}
+#lc2btime{position: absolute;top:730px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2btimeinput{width: 50px;margin-right: 5px;}
+#lc2ctime{position: absolute;top:570px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ctimeinput{width: 50px;margin-right: 5px;}
+#lc2abtime{position: absolute;top:790px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2abtimeinput{width: 50px;margin-right: 5px;}
+#lc2abclength{position: absolute;top:700px;left: 380px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2alength{position: absolute;top:910px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2blength{position: absolute;top:750px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2clength{position: absolute;top:590px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ablength{position: absolute;top:810px;left: 220px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+
+#lc2pressure{position: absolute;top:560px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2pressureinput{width: 170px;margin-right: 5px;}
+#lc2quench{position: absolute;top:580px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2quenchinput{width: 170px;margin-right: 5px;}
+#lc2steadystateflag{width: 178px; height:22px; position: absolute;top:600px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2sonic{width: 178px; height:22px; position: absolute;top:540px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+#lc2collectiontime{position: absolute;top:620px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2collectiontimeinput{width: 170px;margin-right: 5px;}
+
+#lc2product{position: absolute;top:660px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2productinput{width: 170px;margin-right: 5px;}
+#lc2conversion{position: absolute;top:680px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2conversioninput{width: 170px;margin-right: 5px;}
+#lc2conversionmethod{width: 148px; height:22px; position: absolute;top:700px;left: 630px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2yield{position: absolute;top:720px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2yieldinput{width: 170px;margin-right: 5px;}
+#lc2yieldmethod{width: 148px; height:22px; position: absolute;top:740px;left: 630px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+
+#lc2addmixername{height: 22px;position: absolute;top:500px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2addmixernameinput{width: 150px;margin-right: 5px;}
+#lc2addmixervolume{height: 22px;position: absolute;top:500px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2addmixervolumeinput{width: 100px;margin-right: 5px;}
+#lc2addmixer{cursor: pointer;background-color: #000000;color: white;border-radius: 10px;position: absolute;top:497px;left: 660px;width: 80px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+
+
+#lc2notes{position: absolute;top:760px;left: 600px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2notesinput{width: 170px;margin-right: 5px;}
+
+#lc2abmixernew{height: 22px;position: absolute;top:730px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ablinetemp{position: absolute;top:690px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ablinetempinput{width: 50px;margin-right: 5px;}
+#lc2abbathtemp{position: absolute;top:710px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2abbathtempinput{width: 50px;margin-right: 5px;}
+
+#lc2bcmixernew{height: 22px;position: absolute;top:620px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bclinetemp{position: absolute;top:580px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bclinetempinput{width: 50px;margin-right: 5px;}
+#lc2bcbathtemp{position: absolute;top:600px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bcbathtempinput{width: 50px;margin-right: 5px;}
+
+
+#lc2alabeltable{position: absolute;top:360px;left: 50px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2atableadd1{cursor: pointer;position: absolute;top:385px;left: 255px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2atableadd2{cursor: pointer;display: none;position: absolute;top:405px;left: 255px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2atableminus2{cursor: pointer;display: none;position: absolute;top:405px;left: 273px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2atableminus3{cursor: pointer;display: none;position: absolute;top:426px;left: 258px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedAsolvent{position: absolute;top:360px;left: 120px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedAsolventinput{width: 120px;margin-right: 5px;}
+#lc2feedA1{position: absolute;top:390px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA1input{width: 90px;margin-right: 5px;}
+#lc2feedA1molarity{position: absolute;top:390px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA1molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedA2{display: none; position: absolute;top:410px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA2input{width: 90px;margin-right: 5px;}
+#lc2feedA2molarity{display: none;position: absolute;top:410px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA2molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedA3{display: none;position: absolute;top:430px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA3input{width: 90px;margin-right: 5px;}
+#lc2feedA3molarity{display: none;position: absolute;top:430px;left: 150px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedA3molarityinput{width: 90px;margin-right: 5px;}
+
+
+#lc2blabeltable{position: absolute;top:360px;left: 300px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2btableadd1{cursor: pointer;position: absolute;top:385px;left: 505px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2btableadd2{cursor: pointer;display: none;position: absolute;top:405px;left: 505px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2btableminus2{cursor: pointer;display: none;position: absolute;top:405px;left: 525px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2btableminus3{cursor: pointer;display: none;position: absolute;top:426px;left: 508px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedBsolvent{position: absolute;top:360px;left: 370px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedBsolventinput{width: 120px;margin-right: 5px;}
+#lc2feedB1{position: absolute;top:390px;left: 300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB1input{width: 90px;margin-right: 5px;}
+#lc2feedB1molarity{position: absolute;top:390px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB1molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedB2{display: none;position: absolute;top:410px;left: 300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB2input{width: 90px;margin-right: 5px;}
+#lc2feedB2molarity{display: none;position: absolute;top:410px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB2molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedB3{display: none;position: absolute;top:430px;left:300px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB3input{width: 90px;margin-right: 5px;}
+#lc2feedB3molarity{display: none;position: absolute;top:430px;left: 400px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedB3molarityinput{width: 90px;margin-right: 5px;}
+
+
+#lc2clabeltable{position: absolute;top:360px;left: 550px;font-size: 18px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ctableadd1{cursor: pointer;position: absolute;top:385px;left: 755px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ctableadd2{cursor: pointer;display: none;position: absolute;top:405px;left: 755px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ctableminus2{cursor: pointer;display: none;position: absolute;top:405px;left: 775px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2ctableminus3{cursor: pointer;display: none;position: absolute;top:426px;left: 758px;font-size: 25px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedCsolvent{position: absolute;top:360px;left: 620px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedCsolventinput{width: 120px;margin-right: 5px;}
+#lc2feedC1{position: absolute;top:390px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC1input{width:90px;margin-right: 5px;}
+#lc2feedC1molarity{position: absolute;top:390px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC1molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedC2{display: none;position: absolute;top:410px;left: 550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC2input{width: 90px;margin-right: 5px;}
+#lc2feedC2molarity{display: none;position: absolute;top:410px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC2molarityinput{width: 90px;margin-right: 5px;}
+#lc2feedC3{display: none;position: absolute;top:430px;left:550px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC3input{width: 90px;margin-right: 5px;}
+#lc2feedC3molarity{display: none;position: absolute;top:430px;left: 650px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2feedC3molarityinput{width: 90px;margin-right: 5px;}
+
+#lc2abchipadd{position: absolute;top:795px;left: 295px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2bcchipadd{position: absolute;top:685px;left: 455px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+#lc2experimental{position: absolute;top:230px;left: 50px;width: 740px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2reactorleaktest{position: absolute;top:900px;left: 240px;width: 600px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc2reactorvolume{position: absolute;top:920px;left: 240px;width: 600px; font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+
+/* #lc2tee250{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 70px;width: 80px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+#lc2tee500{ cursor: pointer;background-color: #000000;color: white;border-radius: 10px;position: absolute;top:950px;left: 165px;width: 80px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+#lc2tee1600{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 260px;width: 80px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+#lc2standardchip{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 355px;width: 130px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;} */
+#lc2preset{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 300px;width: 90px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+#lc2preset2{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 405px;width: 90px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+#lc2preset3{ cursor: pointer;background-color: #000000;color: rgb(255, 255, 255);border-radius: 10px;position: absolute;top:950px;left: 510px;width: 90px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+
+
+#lc2csvsave{ cursor: pointer;background-color: #000000;color: white;border-radius: 10px;position: absolute;top:950px;left: 690px;width: 100px; font-size: 15px ;font-family: Arial, Helvetica, sans-serif;padding: 5px 5px; text-align: center;}
+
+#largecanvas2values{ display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#lc3aflowrate{position: absolute;top:850px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3aflowrateinput{width: 25px;margin-right: 5px;}
+#lc3bflowrate{position: absolute;top:690px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3bflowrateinput{width: 35px;margin-right: 5px;}
+#lc3cflowrate{position: absolute;top:530px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3cflowrateinput{width: 35px;margin-right: 5px;}
+#lc3dflowrate{position: absolute;top:370px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3dflowrateinput{width: 35px;margin-right: 5px;}
+#lc3abcdiameter{position: absolute;top:660px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abcdiameterinput{width: 35px;margin-right: 5px;}
+#lc3adiameter{position: absolute;top:870px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3adiameterinput{width: 25px;margin-right: 5px;}
+#lc3bdiameter{position: absolute;top:710px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3bdiameterinput{width: 35px;margin-right: 5px;}
+#lc3cdiameter{position: absolute;top:550px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3cdiameterinput{width: 35px;margin-right: 5px;}
+#lc3ddiameter{position: absolute;top:390px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3ddiameterinput{width: 35px;margin-right: 5px;}
+#lc3abdiameter{position: absolute;top:770px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abdiameterinput{width: 35px;margin-right: 5px;}
+#lc3abcddiameter{position: absolute;top:520px;left: 540px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abcddiameterinput{width: 35px;margin-right: 5px;}
+#lc3abctime{position: absolute;top:680px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abctimeinput{width: 35px;margin-right: 5px;}
+#lc3atime{position: absolute;top:890px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3atimeinput{width: 25px;margin-right: 5px;}
+#lc3btime{position: absolute;top:730px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3btimeinput{width: 35px;margin-right: 5px;}
+#lc3ctime{position: absolute;top:570px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3ctimeinput{width: 35px;margin-right: 5px;}
+#lc3dtime{position: absolute;top:410px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3dtimeinput{width: 35px;margin-right: 5px;}
+#lc3abtime{position: absolute;top:790px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abtimeinput{width: 35px;margin-right: 5px;}
+#lc3abcdtime{position: absolute;top:540px;left: 540px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abcdtimeinput{width: 35px;margin-right: 5px;}
+#lc3abclength{position: absolute;top:700px;left: 380px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3alength{position: absolute;top:910px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3blength{position: absolute;top:750px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3clength{position: absolute;top:590px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3dlength{position: absolute;top:430px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3ablength{position: absolute;top:810px;left: 220px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc3abcdlength{position: absolute;top:560px;left: 540px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#largecanvas3values{ display:none;}
+
+#lc4aflowrate{position: absolute;top:850px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4aflowrateinput{width: 25px;margin-right: 5px;}
+#lc4bflowrate{position: absolute;top:690px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4bflowrateinput{width: 35px;margin-right: 5px;}
+#lc4cflowrate{position: absolute;top:530px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4cflowrateinput{width: 35px;margin-right: 5px;}
+#lc4dflowrate{position: absolute;top:370px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4dflowrateinput{width: 35px;margin-right: 5px;}
+#lc4abcdiameter{position: absolute;top:660px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abcdiameterinput{width: 35px;margin-right: 5px;}
+#lc4adiameter{position: absolute;top:870px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4adiameterinput{width: 25px;margin-right: 5px;}
+#lc4bdiameter{position: absolute;top:710px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4bdiameterinput{width: 35px;margin-right: 5px;}
+#lc4cdiameter{position: absolute;top:550px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4cdiameterinput{width: 35px;margin-right: 5px;}
+#lc4cddiameter{position: absolute;top:454px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4cddiameterinput{width: 35px;margin-right: 5px;}
+#lc4ddiameter{position: absolute;top:390px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4ddiameterinput{width: 35px;margin-right: 5px;}
+#lc4abdiameter{position: absolute;top:770px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abdiameterinput{width: 35px;margin-right: 5px;}
+#lc4abcddiameter{position: absolute;top:614px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abcddiameterinput{width: 35px;margin-right: 5px;}
+#lc4abctime{position: absolute;top:680px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abctimeinput{width: 35px;margin-right: 5px;}
+#lc4atime{position: absolute;top:890px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4atimeinput{width: 25px;margin-right: 5px;}
+#lc4btime{position: absolute;top:730px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4btimeinput{width: 35px;margin-right: 5px;}
+#lc4ctime{position: absolute;top:570px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4ctimeinput{width: 35px;margin-right: 5px;}
+#lc4dtime{position: absolute;top:410px;left: 50px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4dtimeinput{width: 35px;margin-right: 5px;}
+#lc4cdtime{position: absolute;top:474px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4cdtimeinput{width: 35px;margin-right: 5px;}
+#lc4abtime{position: absolute;top:790px;left: 220px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abtimeinput{width: 35px;margin-right: 5px;}
+#lc4abcdtime{position: absolute;top:634px;left: 380px;font-size: 12px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abcdtimeinput{width: 35px;margin-right: 5px;}
+#lc4abclength{position: absolute;top:700px;left: 380px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4alength{position: absolute;top:910px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4blength{position: absolute;top:750px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4clength{position: absolute;top:590px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4dlength{position: absolute;top:430px;left: 50px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4ablength{position: absolute;top:810px;left: 220px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4cdlength{position: absolute;top:494px;left: 220px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#lc4abcdlength{position: absolute;top:654px;left: 380px;font-weight: 900;font-size: 14px ;font-family: Arial, Helvetica, sans-serif;}
+#largecanvas4values{ display:none;}
+
+

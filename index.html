@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Flow chemistry tool</title>
+    <link rel="stylesheet" href="css.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <div id="title">Flow chemistry tool</div>
+
+    <div id="select">Select reactor...</div>
+    
+    <div id="minicanva"> <!-- 4 reactors in the top left -->
+        <canvas id="canvas1" width="100" height="100" style="border: 2px white solid" onclick="canvas1open()"></canvas>
+        <canvas id="canvas2" width="100" height="100" style="border: 2px white solid" onclick="canvas2open()"></canvas>
+        <canvas id="canvas3" width="100" height="100" style="border: 2px white solid" onclick="canvas3open()"></canvas>
+        <canvas id="canvas4" width="100" height="100" style="border: 2px white solid" onclick="canvas4open()"></canvas>
+    </div>
+
+    <div id="maincanva"> <!-- main canvas where selected reactor is shown -->
+        <canvas id="largecanvas" width="800" height="790" style="border: 8px rgb(0, 0, 0) solid"></canvas>
+    </div>
+
+    <div id="largecanvas1values"> <!-- first reactor div -->
+
+        <div id="lc1feedAsolvent">
+            <input id="lc1feedAsolventinput" list="lc1feedAsolventinputoptions" type="text" placeholder="solvent (SMILES)" spellcheck="false" onkeyup="largecanvas1update()">
+            <datalist id="lc1feedAsolventinputoptions" onchange="largecanvas1update()">
+                <option label = "THF"  value="C1CCOC1"></option>
+                <option label = "PhMe" value="Cc1ccccc1"></option>
+                <option label = "DCM"  value="ClCCl"></option>
+                <option label = "MeCN" value="CC#N"></option>
+                <option label = "AcOH" value="CC(O)=O"></option>
+                <option label = "acetone" value="CC(=O)C"></option>
+                <option label = "iPrOAc" value = "CC(OC(C)C)=O"></option>
+                <option label = "n-hexane" value = "CCCCCC"></option>
+            </datalist>
+        </div>
+
+        <!-- feed SMILES and molarities -->
+        <div id="lc1feedA1"><input id="lc1feedA1input" type="text" placeholder="Component 1" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedA1molarity"><input id="lc1feedA1molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedA2"><input id="lc1feedA2input" type="text" placeholder="Component 2" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedA2molarity"><input id="lc1feedA2molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedA3"><input id="lc1feedA3input" type="text" placeholder="Component 3" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedA3molarity"><input id="lc1feedA3molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <div id="lc1feedBsolvent">
+        <input id="lc1feedBsolventinput" list="lc1feedBsolventinputoptions" type="text" placeholder="solvent (SMILES)" spellcheck="false" onkeyup="largecanvas1update()">
+        <datalist id="lc1feedBsolventinputoptions">
+                <option label = "THF"  value="C1CCOC1"></option>
+                <option label = "PhMe" value="Cc1ccccc1"></option>
+                <option label = "DCM"  value="ClCCl"></option>
+                <option label = "MeCN" value="CC#N"></option>
+                <option label = "AcOH" value="CC(O)=O"></option>
+                <option label = "acetone" value="CC(=O)C"></option>
+                <option label = "iPrOAc" value = "CC(OC(C)C)=O"></option>
+                <option label = "n-hexane" value = "CCCCCC"></option>
+        </datalist>
+        </div>
+       
+        <div id="lc1feedB1">
+            <input id="lc1feedB1input" list="lc1feedB1inputlist" type="text" placeholder="Component 1" spellcheck="false" onkeyup="largecanvas1update()">
+        </div>
+        
+        <div id="lc1feedB1molarity"><input id="lc1feedB1molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedB2"><input id="lc1feedB2input" type="text" placeholder="Component 2" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedB2molarity"><input id="lc1feedB2molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedB3"><input id="lc1feedB3input" type="text" placeholder="Component 3" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1feedB3molarity"><input id="lc1feedB3molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <div id="lc1bflowrate"><input id="lc1bflowrateinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">mL/min </div>
+        <div id="lc1bdiameter"><input id="lc1bdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">mm (Ø) </div>
+        <div id="lc1btime"><input id="lc1btimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">s </div>
+
+        <div id="lc1aflowrate"><input id="lc1aflowrateinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">mL/min </div>
+        <div id="lc1adiameter"><input id="lc1adiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">mm (Ø) </div>
+        <div id="lc1atime"><input id="lc1atimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">s </div>
+
+        <div id="lc1ablinetemp"><input id="lc1ablinetempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">&#8451 (in-line)</div>
+        <div id="lc1abbathtemp"><input id="lc1abbathtempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">&#8451 (bath)</div>
+        
+        <select id="lc1abmixernew" onchange="largecanvas1update()">
+            <option value= "not specified">Select mixer...</option>
+            <option value = "0">0.25 mm T-piece</option>
+            <option value = "0">0.5 mm T-piece</option>
+            <option value = "0">1.6 mm T-piece</option>
+            <option value = "0.1">HTM-ST-3-1</option>
+        </select>
+    
+        <div id="lc1addmixername"><input id="lc1addmixernameinput" placeholder="Static mixer name" spellcheck="false"> </div>
+        <div id="lc1addmixervolume"><input id="lc1addmixervolumeinput" type="number" placeholder="volume (mL)" spellcheck="false"> </div>
+        <div id="lc1addmixer" onclick="lc1addmixer()">Add mixer</div>        
+
+        <div id="lc1abdiameter"><input id="lc1abdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">mm (Ø)</div>
+        <div id="lc1abtime"><input id="lc1abtimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas1update()">s</div>
+
+        <div id="lc1alength">Length = </div>
+        <div id="lc1blength">Length = </div>
+        <div id="lc1ablength">Length =  </div>
+    
+        <div id="lc1alabel">Feed A</div>
+        <div id="lc1blabel">Feed B</div>
+        
+        <div id="lc1abchipadd"></div>
+
+        <div id="lc1experimental"></div>
+
+        <div id="lc1alabeltable">Feed A</div>
+        <div id="lc1atableadd1" onclick="lc1atableadd1()">+</div>
+        <div id="lc1atableadd2" onclick="lc1atableadd2()">+</div>
+        <div id="lc1atableminus2" onclick="lc1atableminus2()">-</div>
+        <div id="lc1atableminus3" onclick="lc1atableminus3()">-</div>
+
+        <div id="lc1blabeltable">Feed B</div>
+        <div id="lc1btableadd1" onclick="lc1btableadd1()">+</div>
+        <div id="lc1btableadd2" onclick="lc1btableadd2()">+</div>
+        <div id="lc1btableminus2" onclick="lc1btableminus2()">-</div>
+        <div id="lc1btableminus3" onclick="lc1btableminus3()">-</div>
+
+        <select id="lc1sonic" onchange="largecanvas1update()">
+            <option label = "Sonication?" value = "not specified">?</option>
+            <option label = "Yes" value = "Yes"></option>
+            <option label = "No" value = "No"></option>
+        </select>
+
+        <div id="lc1pressure"><input id="lc1pressureinput" type="number" placeholder="BPR (psi)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <div id="lc1quench"><input id="lc1quenchinput" type="text" placeholder="quench (free text)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <select id="lc1steadystateflag" onchange="largecanvas1update()">
+            <option label = "Steady state collection?" value= "not specified"></option>
+            <option label = "Yes" value = "Yes"></option>
+            <option label = "No" value = "No"></option>
+        </select>
+
+        <div id="lc1collectiontime"><input id="lc1collectiontimeinput" type="number" placeholder="collection time (s)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+
+        <div id="lc1product"><input id="lc1productinput" type="text" placeholder="product (SMILES)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <div id="lc1conversion"><input id="lc1conversioninput" type="number" placeholder="%product (rxn profile)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        
+        <select id="lc1conversionmethod" onchange="largecanvas1update()">
+            <option label = "analysis method?" value= "not specified"></option>
+            <option label = "acidic LCMS/UPLC" value = "acidic LCMS/UPLC"></option>
+            <option label = "basic LCMS/UPLC" value = "basic LCMS/UPLC"></option>
+            <option label = "NMR" value = "NMR"></option>
+            <option label = "wet titration" value = "wet titration"></option>
+        </select>
+
+        <div id="lc1yield"><input id="lc1yieldinput" type="number" placeholder="isolated yield (%)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <select id="lc1yieldmethod" onchange="largecanvas1update()">
+            <option label = "analysis method?" value= "not specified"></option>
+            <option label = "mass + LCMS/UPLC purity "value = "mass + LCMS/UPLC purity"></option>
+            <option label = "mass + NMR purity" value = "mass + NMR purity"></option>
+            <option label = "mass + QNMR purity" value = "mass + QNMR purity"></option>
+            <option label = "qLCMS/qUPLC" value = "qLCMS/qUPLC"></option>
+            <option label = "wet titration" value = "wet titration"></option>
+        </select>
+        <div id="lc1notes"><input id="lc1notesinput" type="text" placeholder="Notes (free text)?" spellcheck="false" onkeyup="largecanvas1update()"></div>
+        <div id="lc1reactorleaktest"></div>
+        <div id="lc1reactorvolume"></div>
+        <div id="lc1csvsave" onclick=" largecanvas1update(), setDate(),downloadBlob(lc1csvarray, Date.now(), 'text/csv;charset=utf-8;')">Export to .csv</div>
+    </div>
+    
+
+
+
+
+    <div id="largecanvas2values"> <!-- 2nd reactor div -->
+
+        <div id="lc2alabeltable">Feed A</div>
+        <div id="lc2atableadd1" onclick="lc2atableadd1()">+</div>
+        <div id="lc2atableadd2" onclick="lc2atableadd2()">+</div>
+        <div id="lc2atableminus2" onclick="lc2atableminus2()">-</div>
+        <div id="lc2atableminus3" onclick="lc2atableminus3()">-</div>
+
+        <div id="lc2addmixername"><input id="lc2addmixernameinput" placeholder="Static mixer name" spellcheck="false"> </div>
+        <div id="lc2addmixervolume"><input id="lc2addmixervolumeinput" type="number" placeholder="volume (mL)" spellcheck="false"> </div>
+        <div id="lc2addmixer" onclick="lc2addmixer()">Add mixer</div> 
+
+        <div id="lc2feedAsolvent">
+            <input id="lc2feedAsolventinput" list="lc2feedAsolventinputoptions" type="text" placeholder="solvent (SMILES)" spellcheck="false" onkeyup="largecanvas2update()">
+            <datalist id="lc2feedAsolventinputoptions" onchange="largecanvas2update()">
+                <option label = "THF"  value="C1CCOC1"></option>
+                <option label = "PhMe" value="Cc1ccccc1"></option>
+                <option label = "DCM"  value="ClCCl"></option>
+                <option label = "MeCN" value="CC#N"></option>
+                <option label = "AcOH" value="CC(O)=O"></option>
+                <option label = "acetone" value="CC(=O)C"></option>
+                <option label = "iPrOAc" value = "CC(OC(C)C)=O"></option>
+                <option label = "n-hexane" value = "CCCCCC"></option>
+            </datalist>
+        </div>
+       
+        <div id="lc2feedA1"><input id="lc2feedA1input" type="text" placeholder="Component 1" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedA1molarity"><input id="lc2feedA1molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedA2"><input id="lc2feedA2input" type="text" placeholder="Component 2" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedA2molarity"><input id="lc2feedA2molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedA3"><input id="lc2feedA3input" type="text" placeholder="Component 3" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedA3molarity"><input id="lc2feedA3molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+
+        <div id="lc2blabeltable">Feed B</div>
+        <div id="lc2btableadd1" onclick="lc2btableadd1()">+</div>
+        <div id="lc2btableadd2" onclick="lc2btableadd2()">+</div>
+        <div id="lc2btableminus2" onclick="lc2btableminus2()">-</div>
+        <div id="lc2btableminus3" onclick="lc2btableminus3()">-</div>
+
+        <div id="lc2feedBsolvent">
+        <input id="lc2feedBsolventinput" list="lc2feedBsolventinputoptions" type="text" placeholder="solvent (SMILES)" spellcheck="false" onkeyup="largecanvas2update()">
+        <datalist id="lc2feedBsolventinputoptions">
+                <option label = "THF"  value="C1CCOC1"></option>
+                <option label = "PhMe" value="Cc1ccccc1"></option>
+                <option label = "DCM"  value="ClCCl"></option>
+                <option label = "MeCN" value="CC#N"></option>
+                <option label = "AcOH" value="CC(O)=O"></option>
+                <option label = "acetone" value="CC(=O)C"></option>
+                <option label = "iPrOAc" value = "CC(OC(C)C)=O"></option>
+                <option label = "n-hexane" value = "CCCCCC"></option>
+        </datalist>
+        </div>
+
+        <div id="lc2feedB1">
+            <input id="lc2feedB1input" list="lc2feedB1inputlist" type="text" placeholder="Component 1" spellcheck="false" onkeyup="largecanvas2update()">
+            <datalist id="lc2feedB1inputlist">
+                <option label = "hexyllithium" value="[Li+].CCCCC[CH2-]"></option>
+                <option label = "butyllithium" value="[Li+].CCC[CH2-]"></option>
+        </datalist>
+        </div>
+
+        <div id="lc2feedB1molarity"><input id="lc2feedB1molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedB2"><input id="lc2feedB2input" type="text" placeholder="Component 2" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedB2molarity"><input id="lc2feedB2molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedB3"><input id="lc2feedB3input" type="text" placeholder="Component 3" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedB3molarity"><input id="lc2feedB3molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+
+        <div id="lc2clabeltable">Feed C</div>
+        <div id="lc2ctableadd1" onclick="lc2ctableadd1()">+</div>
+        <div id="lc2ctableadd2" onclick="lc2ctableadd2()">+</div>
+        <div id="lc2ctableminus2" onclick="lc2ctableminus2()">-</div>
+        <div id="lc2ctableminus3" onclick="lc2ctableminus3()">-</div>
+
+        <div id="lc2feedCsolvent">
+        <input id="lc2feedCsolventinput" list="lc2feedCsolventinputoptions" type="text" placeholder="solvent (SMILES)" spellcheck="false" onkeyup="largecanvas2update()">
+        <datalist id="lc2feedCsolventinputoptions">
+                <option label = "THF"  value="C1CCOC1"></option>
+                <option label = "PhMe" value="Cc1ccccc1"></option>
+                <option label = "DCM"  value="ClCCl"></option>
+                <option label = "MeCN" value="CC#N"></option>
+                <option label = "AcOH" value="CC(O)=O"></option>
+                <option label = "acetone" value="CC(=O)C"></option>
+                <option label = "iPrOAc" value = "CC(OC(C)C)=O"></option>
+                <option label = "n-hexane" value = "CCCCCC"></option>
+        </datalist>
+        </div>
+
+        <div id="lc2feedC1"><input id="lc2feedC1input" type="text" placeholder="Component 1" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedC1molarity"><input id="lc2feedC1molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedC2"><input id="lc2feedC2input" type="text" placeholder="Component 2" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedC2molarity"><input id="lc2feedC2molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedC3"><input id="lc2feedC3input" type="text" placeholder="Component 3" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2feedC3molarity"><input id="lc2feedC3molarityinput" type="number" placeholder="molarity (M)" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        
+        <div id="lc2cflowrate"><input id="lc2cflowrateinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mL/min </div>
+        <div id="lc2cdiameter"><input id="lc2cdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mm (Ø)</div>
+        <div id="lc2ctime"><input id="lc2ctimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">s</div>
+
+        <div id="lc2bflowrate"><input id="lc2bflowrateinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mL/min </div>
+        <div id="lc2bdiameter"><input id="lc2bdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mm (Ø) </div>
+        <div id="lc2btime"><input id="lc2btimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">s </div>
+
+        <div id="lc2aflowrate"><input id="lc2aflowrateinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mL/min </div>
+        <div id="lc2adiameter"><input id="lc2adiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mm (Ø) </div>
+        <div id="lc2atime"><input id="lc2atimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">s </div>
+        
+        <div id="lc2ablinetemp"><input id="lc2ablinetempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">&#8451 (in-line)</div>
+        <div id="lc2abbathtemp"><input id="lc2abbathtempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">&#8451 (bath)</div>
+        <select id="lc2abmixernew" onchange="largecanvas2update()">
+            <option value= "not specified">Select mixer...</option>
+            <option value = "0">0.25 mm T-piece</option>
+            <option value = "0">0.5 mm T-piece</option>
+            <option value = "0">1.6 mm T-piece</option>
+            <option value = "HTM-ST-3-1">HTM-ST-3-1</option>
+        </select>        
+
+        <div id="lc2abdiameter"><input id="lc2abdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mm (Ø)</div>
+        <div id="lc2abtime"><input id="lc2abtimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">s</div>
+        
+        <div id="lc2bclinetemp"><input id="lc2bclinetempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">&#8451 (in-line)</div>
+        <div id="lc2bcbathtemp"><input id="lc2bcbathtempinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">&#8451 (bath)</div>
+        <select id="lc2bcmixernew" onchange="largecanvas2update()">
+            <option value= "not specified">Select mixer...</option>
+            <option value = "0">0.25 mm T-piece</option>
+            <option value = "0">0.5 mm T-piece</option>
+            <option value = "0">1.6 mm T-piece</option>
+            <option value = "HTM-ST-3-1">HTM-ST-3-1</option>
+        </select>        
+    
+        <div id="lc2abcdiameter"><input id="lc2abcdiameterinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">mm (Ø)</div>
+        <div id="lc2abctime"><input id="lc2abctimeinput" type="number" placeholder="" spellcheck="false" onkeyup="largecanvas2update()">s</div>
+
+        <div id="lc2abclength">Length = </div>
+        <div id="lc2alength">Length = </div>
+        <div id="lc2blength">Length = </div>
+        <div id="lc2clength">Length = </div>
+        <div id="lc2ablength">Length =  </div>
+
+        <div id="lc2alabel">Feed A</div>
+        <div id="lc2blabel">Feed B</div>
+        <div id="lc2clabel">Feed C</div>
+     
+        <div id="lc2abchipadd"></div>
+        <div id="lc2bcchipadd"></div>
+
+        <select id="lc2sonic" onchange="largecanvas2update()">
+            <option label = "Sonication?" value = "not specified">?</option>
+            <option label = "Yes" value = "Yes"></option>
+            <option label = "No" value = "No"></option>
+        </select>
+
+        <div id="lc2pressure"><input id="lc2pressureinput" type="number" placeholder="BPR (psi)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2quench"><input id="lc2quenchinput" type="text" placeholder="quench (free text)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <select id="lc2steadystateflag" onchange="largecanvas2update()">
+            <option label = "Steady state collection?" value= "not specified"></option>
+            <option label = "Yes" value = "Yes"></option>
+            <option label = "No" value = "No"></option>
+        </select>
+        
+        <div id="lc2collectiontime"><input id="lc2collectiontimeinput" type="number" placeholder="collection time (s)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+
+        <div id="lc2product"><input id="lc2productinput" type="text" placeholder="product (SMILES)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <div id="lc2conversion"><input id="lc2conversioninput" type="number" placeholder="%product (rxn profile)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <select id="lc2conversionmethod" onchange="largecanvas2update()">
+            <option label = "analysis method?" value= "not specified"></option>
+            <option label = "acidic LCMS/UPLC" value = "acidic LCMS/UPLC"></option>
+            <option label = "basic LCMS/UPLC" value = "basic LCMS/UPLC"></option>
+            <option label = "NMR" value = "NMR"></option>
+            <option label = "wet titration" value = "wet titration"></option>
+        </select>
+
+        <div id="lc2yield"><input id="lc2yieldinput" type="number" placeholder="isolated yield (%)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+        <select id="lc2yieldmethod" onchange="largecanvas2update()">
+            <option label = "analysis method?" value= "not specified"></option>
+            <option label = "mass + LCMS/UPLC purity "value = "mass + LCMS/UPLC purity"></option>
+            <option label = "mass + NMR purity" value = "mass + NMR purity"></option>
+            <option label = "mass + QNMR purity" value = "mass + QNMR purity"></option>
+            <option label = "qLCMS/qUPLC" value = "qLCMS/qUPLC"></option>
+            <option label = "wet titration" value = "wet titration"></option>
+        </select>
+
+        <div id="lc2notes"><input id="lc2notesinput" type="text" placeholder="Notes (free text)?" spellcheck="false" onkeyup="largecanvas2update()"></div>
+
+        <div id="lc2experimental"></div>
+
+        <div id="lc2reactorleaktest"></div>
+        <div id="lc2reactorvolume"></div>
+
+        <div id="lc2preset" onclick=" preset1(), largecanvas2update()">Add preset 1</div> 
+        <div id="lc2preset2" onclick=" preset2(), largecanvas2update()">Add preset 2</div> 
+        <div id="lc2preset3" onclick=" preset3(), largecanvas2update()">Add preset 2</div> 
+
+        <div id="lc2csvsave" onclick=" largecanvas2update(), setDate(), downloadBlob(lc2csvarray, Date.now(), 'text/csv;charset=utf-8;')">Export to .csv</div>
+    </div>
+    
+
+    <div id="largecanvas3values"> <!-- 3rd reactor div -->
+        <div id="lc3aflowrate"><input id="lc3aflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mL/min </div>
+        <div id="lc3bflowrate"><input id="lc3bflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mL/min </div>
+        <div id="lc3cflowrate"><input id="lc3cflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mL/min </div>
+        <div id="lc3dflowrate"><input id="lc3dflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mL/min </div>
+
+        <div id="lc3abcdiameter"><input id="lc3abcdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø)</div>
+        <div id="lc3adiameter"><input id="lc3adiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø) </div>
+        <div id="lc3bdiameter"><input id="lc3bdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø) </div>
+        <div id="lc3cdiameter"><input id="lc3cdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø)</div>
+        <div id="lc3ddiameter"><input id="lc3ddiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø)</div> 
+        <div id="lc3abcddiameter"><input id="lc3abcddiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø)</div>
+        <div id="lc3abdiameter"><input id="lc3abdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">mm (Ø)</div>
+
+        <div id="lc3abctime"><input id="lc3abctimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s</div>
+        <div id="lc3atime"><input id="lc3atimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s </div>
+        <div id="lc3btime"><input id="lc3btimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s </div>
+        <div id="lc3ctime"><input id="lc3ctimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s</div>
+        <div id="lc3dtime"><input id="lc3dtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s</div>
+        <div id="lc3abcdtime"><input id="lc3abcdtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s</div>
+        <div id="lc3abtime"><input id="lc3abtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas3update()">s</div>
+
+        <div id="lc3abclength">Length = </div>
+        <div id="lc3alength">Length = </div>
+        <div id="lc3blength">Length = </div>
+        <div id="lc3clength">Length = </div>
+        <div id="lc3dlength">Length = </div>
+        <div id="lc3abcdlength">Length = </div>
+        <div id="lc3ablength">Length =  </div>
+    </div>
+
+
+    <div id="largecanvas4values"> <!-- 4th reactor div -->
+        <div id="lc4aflowrate"><input id="lc4aflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mL/min </div>
+        <div id="lc4bflowrate"><input id="lc4bflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mL/min </div>
+        <div id="lc4cflowrate"><input id="lc4cflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mL/min </div>
+        <div id="lc4dflowrate"><input id="lc4dflowrateinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mL/min </div>
+
+        <div id="lc4adiameter"><input id="lc4adiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø) </div>
+        <div id="lc4bdiameter"><input id="lc4bdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø) </div>
+        <div id="lc4cdiameter"><input id="lc4cdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø)</div>
+        <div id="lc4ddiameter"><input id="lc4ddiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø)</div>
+        <div id="lc4abdiameter"><input id="lc4abdiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø)</div>
+        <div id="lc4cddiameter"><input id="lc4cddiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø)</div>
+        <div id="lc4abcddiameter"><input id="lc4abcddiameterinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">mm (Ø)</div>
+
+        <div id="lc4atime"><input id="lc4atimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s </div>
+        <div id="lc4btime"><input id="lc4btimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s </div>
+        <div id="lc4ctime"><input id="lc4ctimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s</div>
+        <div id="lc4dtime"><input id="lc4dtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s</div>
+        <div id="lc4abtime"><input id="lc4abtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s</div>
+        <div id="lc4cdtime"><input id="lc4cdtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s</div>
+        <div id="lc4abcdtime"><input id="lc4abcdtimeinput" type="text" placeholder="" spellcheck="false" onkeyup="largecanvas4update()">s</div>
+
+        <div id="lc4alength">Length = </div>
+        <div id="lc4blength">Length = </div>
+        <div id="lc4clength">Length = </div>
+        <div id="lc4dlength">Length = </div>
+        <div id="lc4ablength">Length = </div>
+        <div id="lc4cdlength">Length =  </div>
+        <div id="lc4abcdlength">Length =  </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+<script src="presets.js"></script>
+
+</html>
+
